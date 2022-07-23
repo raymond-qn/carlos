@@ -1,0 +1,49 @@
+<div class=" h-100 d-flex justify-content-center align-items-center">
+    <div class="row">
+        <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="../..">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="supp/inventory/view">Ver inventario de productos</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class=" h-100 d-flex justify-content-center align-items-center">
+    <h1>Ordenes solicitadas</h1>
+</div>
+<div class=" h-100 d-flex justify-content-center align-items-center">
+    <div class="table-responsive">
+        <table
+        datatable
+        class="table table-hover table-bordered responsive"
+        cellspacing="0"
+        id="productsTable">
+            <thead>
+              <tr>
+                <th>Codigo Producto</th>
+                <th>Nombre Producto</th>
+                <th>Costo unitario</th>
+                <th>Cantidad solicitada</th>
+              </tr>
+            </thead>
+            <tbody>
+                <ng-container *ngFor = "let order of this.orderList; let i = index">
+                <tr class = "clickableIcon">
+                  <td>{{order.codigo_producto}} </td>
+                  <td>{{order.nombre_producto}} </td>
+                  <td>{{order.costo}} </td>
+                  <td>{{order.cantidad_solicitada}} </td>
+                </tr>
+              </ng-container>
+            </tbody>
+        </table>
+        <div class="table-responsive">
+            <button class="btn btn-primary" type="button" (click) = "aprobar()">
+                <i class="fa fa-fw fa-lg fa-check-circle"></i>Aprobar
+             </button>
+        </div>
+    </div>
+</div>
+

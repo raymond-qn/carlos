@@ -1,0 +1,41 @@
+<div class=" h-100 d-flex justify-content-center align-items-center">
+    <div class="row">
+        <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="../..">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ftd/order/create">Crear ordenes</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class=" h-100 d-flex justify-content-center align-items-center">
+    <h1>Ordenes Creadas</h1>
+</div>
+<div class=" h-100 d-flex justify-content-center align-items-center">
+    <div class="table-responsive">
+        <table
+        datatable
+        class="table table-hover table-bordered responsive"
+        cellspacing="0"
+        id="productsTable">
+            <thead>
+              <tr>
+                <th>Proveedor</th>
+                <th>Producto</th>
+                <th>Cantidad</th>
+              </tr>
+            </thead>
+            <tbody>
+                <ng-container *ngFor = "let order of this.orders; let i = index">
+                <tr class = "clickableIcon">
+                  <td>{{order.proveedor.nombre}} </td>
+                  <td>{{order.producto.nombre}} </td>
+                  <td>{{order.cantidad}} </td>
+                </tr>
+              </ng-container>
+            </tbody>
+        </table>
+    </div>
+</div>
